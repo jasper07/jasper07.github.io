@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Second Phase Solutions]]></title>
+  <link href="http://jasper07.github.io/atom.xml" rel="self"/>
+  <link href="http://jasper07.github.io/"/>
+  <updated>2015-01-04T21:23:40+11:00</updated>
+  <id>http://jasper07.github.io/</id>
+  <author>
+    <name><![CDATA[John Patterson]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Post No 2]]></title>
+    <link href="http://jasper07.github.io/blog/2015/01/04/hello-world-post-no-2/"/>
+    <updated>2015-01-04T16:47:47+11:00</updated>
+    <id>http://jasper07.github.io/blog/2015/01/04/hello-world-post-no-2</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Hello World Post No 1]]></title>
+    <link href="http://jasper07.github.io/blog/2015/01/04/hello-world-post-no-1/"/>
+    <updated>2015-01-04T16:47:10+11:00</updated>
+    <id>http://jasper07.github.io/blog/2015/01/04/hello-world-post-no-1</id>
+    <content type="html"><![CDATA[<blockquote><p>Flying is learning how to throw yourself at the ground and miss.</p><footer><strong>Douglas Adams</strong> <cite>The Hichhikers Guide to the Galaxy</cite></footer></blockquote>
+
+
+
+]]></content>
+  </entry>
+  
+</feed>
