@@ -97,7 +97,7 @@
 
 <p>A few people have asked me to share the slides from the talk i gave at SAP Dcode 2014 Las Vegas.</p>
 
-<p>The talk was aimed at developers who had already started developing SAPUI5 apps, the objective of the talks was to highlight some of the issues they would likely face longer term developing and maintaining SAPUI5 applications for the Enterprise, the stuff they dont cover in the tutorials.</p>
+<p>The talk was aimed at developers who had already started writing SAPUI5 apps, the objective was to highlight a variety of patterns, principles and best practices to help them take their development to the next level.</p>
 
 <p>The takeaway points</p>
 
@@ -107,7 +107,7 @@
 
 <p><strong>3. Use fit-for-purposes API&rsquo;s</strong> - the inside-out approach for creating services with Netweaver Gateway sounds like a good idea, take an existing BAPI and expose it. This approach lends itself to complexity, for starters BAPI&rsquo;s are normally quite complex to start with, they have to cater for lots of different scenarios, as you come accross business logic and functionality not available in the BAPI developers will often try workarounds and build the logic into the front end. In this section I talked about the advantages of taking a model first approach, let the data drive the application not the other way around, flesh out the screens you have designed and build an infomation architecture. Use this as a basis for a data model to build your Gateway services from, once your have modeled your services, you can then quickly create Mock Data for the service, this will allow UI5 developers to quickly build the shell of the application and validate the completeness of the data model. Other benefits of using Mock Data first, it means that development can happen in parallel, different parts of the UI can be developed independent of the other UI developments and the backend ABAP developers who will be building the services, using the MockData server makes it easy to create Unit and End-to-End tests allowing you to quickly find issues, perfect for quickly validating new feature request and changes made during bug fixes.</p>
 
-<p>The Fiori 1:1:3 mantra was a timely reminder to keep UI design simple, rather than building one size fits all applications, the same thinking should be applied to development and how we develop, keep things simple and fit for purpose.</p>
+<p>The Fiori 1:1:3 mantra was a timely reminder to keep UI design simple, rather than building one size fits all applications, the same thinking should be applied to development and how we develop, regardless of the size of apps we are building, keep things simple and fit for purpose.</p>
 </div>
 
 </article>
