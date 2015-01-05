@@ -2,6 +2,7 @@
 layout: post
 title: "Beyond SAP Fiori's 1:1:3"
 date: 2015-01-04 22:48
+date_formatted: 2015-01-04 22:48
 comments: true
 categories: ["sapui5", "openui5", "javascript"]
 keywords: "sapui5, openui5, javascript, dcode, fiori, SAP"
