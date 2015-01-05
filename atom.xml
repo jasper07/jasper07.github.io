@@ -4,7 +4,7 @@
   <title><![CDATA[Second Phase Solutions]]></title>
   <link href="http://jasper07.github.io/atom.xml" rel="self"/>
   <link href="http://jasper07.github.io/"/>
-  <updated>2015-01-05T16:22:45+11:00</updated>
+  <updated>2015-01-05T16:39:16+11:00</updated>
   <id>http://jasper07.github.io/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -33,7 +33,7 @@
 
 <p><strong>3. Use fit-for-purposes API&rsquo;s</strong> - the inside-out approach for creating services with Netweaver Gateway sounds like a good idea, take an existing BAPI and expose it. This approach lends itself to complexity, for starters BAPI&rsquo;s are normally quite complex to start with, they have to cater for lots of different scenarios, as you come accross business logic and functionality not available in the BAPI developers will often try workarounds and build the logic into the front end. In this section I talked about the advantages of taking a model first approach, let the data drive the application not the other way around, flesh out the screens you have designed and build an infomation architecture. Use this as a basis for a data model to build your Gateway services from, once your have modeled your services, you can then quickly create Mock Data for the service, this will allow UI5 developers to quickly build the shell of the application and validate the completeness of the data model. Other benefits of using Mock Data first, it means that development can happen in parallel, different parts of the UI can be developed independent of the other UI developments and the backend ABAP developers who will be building the services, using the MockData server makes it easy to create Unit and End-to-End tests allowing you to quickly find issues, perfect for quickly validating new feature request and changes made during bug fixes.</p>
 
-<p>The Fiori 1:1:3 mantra was a timeline reminder to keep UI design simple, rather than building one size fits all applications, the same thinking should be applied to development, keep things simple and fit for purpose.</p>
+<p>The Fiori 1:1:3 mantra was a timely reminder to keep UI design simple, rather than building one size fits all applications, the same thinking should be applied to development and how we develop, keep things simple and fit for purpose.</p>
 ]]></content>
   </entry>
   
