@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: sapui5 | Second Phase Solutions]]></title>
+  <title><![CDATA[Category: sapui5 | ]]></title>
   <link href="http://jasper07.secondphase.com.au/blog/categories/sapui5/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2015-01-05T21:17:48+11:00</updated>
+  <updated>2015-01-05T21:23:25+11:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
