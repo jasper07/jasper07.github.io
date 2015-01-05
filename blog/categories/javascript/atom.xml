@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: javascript | Second Phase Solutions]]></title>
-  <link href="http://jasper07.github.io/blog/categories/javascript/atom.xml" rel="self"/>
-  <link href="http://jasper07.github.io/"/>
-  <updated>2015-01-05T20:53:10+11:00</updated>
-  <id>http://jasper07.github.io/</id>
+  <link href="http://jasper07.secondphase.com.au/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://jasper07.secondphase.com.au/"/>
+  <updated>2015-01-05T21:17:48+11:00</updated>
+  <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Beyond SAP Fiori's 1:1:3]]></title>
-    <link href="http://jasper07.github.io/blog/2015/01/04/beyond-sap-fioris-1-1-3/"/>
+    <link href="http://jasper07.secondphase.com.au/blog/2015/01/04/beyond-sap-fioris-1-1-3/"/>
     <updated>2015-01-04T22:48:00+11:00</updated>
-    <id>http://jasper07.github.io/blog/2015/01/04/beyond-sap-fioris-1-1-3</id>
+    <id>http://jasper07.secondphase.com.au/blog/2015/01/04/beyond-sap-fioris-1-1-3</id>
     <content type="html"><![CDATA[<p><script async="true" class="speakerdeck-embed" data-id="8086964076310132049b22819074b7b4" src="//speakerdeck.com/assets/embed.js"> </script></p>
 
 <p>A few people have asked me to share the slides from the talk I gave at SAP DCode 2014 Las Vegas.</p>
