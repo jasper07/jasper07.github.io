@@ -5,7 +5,7 @@ date: 2015-01-04 22:48
 comments: true
 categories: ["sapui5", "openui5", "javascript"]
 keywords: "sapui5, openui5, javascript, dcode, fiori, SAP"
-description: "The slides from a talk I gave at SAP TechEd DCode 2014, covers some of the best practice for building SAPUI5 apps"
+description: "The slides from a talk I gave at SAP TechEd DCode 2014, it covers some best practice for building SAPUI5 apps"
 ---
 
 {% speakerdeck 8086964076310132049b22819074b7b4 %}
