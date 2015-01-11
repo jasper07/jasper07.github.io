@@ -1,0 +1,12 @@
+pre[class *= "language-"] {
+    width: inherit;
+    border-radius: 0.6em;
+}
+pre[class *= language - ] code {
+    font - size: 14 px;
+    padding: 0;
+}
+pre, code {
+    margin - top: 0 px;
+    background - color: #272822;
+}
