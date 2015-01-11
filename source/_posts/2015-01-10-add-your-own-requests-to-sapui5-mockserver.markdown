@@ -10,7 +10,7 @@ description: "Adding your own xhr mock to SAPUI5 MockServer"
 
 A couple of weeks ago I was playing around with SAP HCP Trial WebIDE and noticed that the Fiori sample applications were using the MockServer for all OData Entity requests and also for the custom OData Function Imports.
 
-This week I had a requirement to create a simple Function Import, the function calls the backend SAP system to determine whether or not to show a button, I used this had an opportunity to investigate and learn how to add my own mock xhr request to the SAPUI5 Mockserver and thought I would share.
+This week I had a requirement to create a simple Function Import, the function calls the backend SAP system to determine whether or not to show a button, I used as an opportunity to investigate and learn how to add my own mock xhr request to the SAPUI5 Mockserver and thought I would share.
 
 To add your own requests to a MockServer instance is quite simple, first set up the MockServer, retrieve the current requests, then add your request and then set the updated requests back to Mockerver.
 
