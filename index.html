@@ -9,7 +9,7 @@
 	<meta name="author" content="John Patterson">
 
 	
-	<meta name="description" content="Mar 5 Shorten Fiori Urls I recently had a requirement to send links to Fiori apps to users via SMS. One of main challenges was how to shorten the &hellip;">
+	<meta name="description" content="Mar 10 Promise Polyfill This is a quick blog to remind myself how to support ES6 Promise&rsquo;s in older versions of SAPUI5. I was developing a UI5 &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -95,6 +95,80 @@
 			<div class="mid-col-container">
 				<div id="content" class="inner">
 <div itemscope itemtype="http://schema.org/Blog">
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-03-10T18:03:00+11:00" data-updated="true" itemprop="datePublished">Mar 10</time></div>
+		<div class="tags">
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2015/03/10/promise-polyfill/" itemprop="url">Promise Polyfill</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>This is a quick blog to remind myself how to support ES6 Promise&rsquo;s in older versions of SAPUI5. I was developing a UI5 app for a customer with Chrome, Chrome already supports natively some of the ECMA Script 6 features like Promises and I it was only when i ran my Opa Tests against Internet Explorer and PhantomJS I found out that I had a couple of backwards compatibility issues which required me to add polyfills.</p>
+
+<p><strong>What is a Promise?</strong></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">A promise represents the result of an asynchronous operation</a>. In JavaScript its a nice clean way of avoiding nested callbacks.</p>
+
+<p>For example a promise could represent a list being loaded and onload you want to trigger some functionality say update the list title with the count of entries</p>
+
+<pre class="language-javascript"><code>oWhenListLoadingIsDone = new Promise(function(fnResolve, fnReject) {
+    // trigger resolve callback when list finished loading
+    oMasterList.attachEventOnce("updateFinished", function(){ fnResolve()
+    ..
+}
+</code></pre>
+
+
+
+
+<pre class="language-javascript">
+oWhenListLoadingIsDone.then(setListTitle, errorCB)
+</code></pre>
+
+
+<p><strong>What is a Polyfill?</strong></p>
+
+<p><a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">A polyfill, is a piece of code that provides the technology that youexpect the browser to provide natively</a>.</p>
+
+<p>SAPUI5 is built on jQuery and jQuery has thier own version of Promise, however thier API breaks the native Promise in a couple of ways.</p>
+
+<p>In my case to get Internet Explorer to support the <code>new Promise(function(fnResolve, fnReject)</code> syntax I had been using was quite simple.</p>
+
+<pre class="language-javascript"><code>if (!window.Promise) {
+    window.Promise = function(callBack) {
+        var promise = jQuery.Deferred();
+
+        callBack(promise.resolve, promise.reject);
+
+        return promise.promise();
+    };
+}
+</code></pre>
+
+
+<p>The current version of UI5 has an ECMA Script 6 Polyfill <a href="https://github.com/SAP/openui5/blob/master/src/sap.ui.core/src/jquery.sap.promise.js"><code>jQuery.sap.promise</code></a> this version is a lot more complete than the one i mention above.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">

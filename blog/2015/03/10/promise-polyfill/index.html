@@ -5,12 +5,12 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Blog Archives - </title>
+	<title>Promise Polyfill - </title>
 	<meta name="author" content="John Patterson">
 
 	
-	<meta name="description" content="2015 Mar 10 Promise Polyfill Mar 5 Shorten Fiori Urls Feb 19 china, mobile, technology Mobile first in China Jan 10 javascript, openui5, sapui5 Add &hellip;">
-	
+	<meta name="description" content="A simple jQuery polyfill for jQuery">
+	<meta name="keywords" content="sapui5, jQuery, promise">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,7 +19,7 @@
 
 	<link href="/atom.xml" rel="alternate" title="" type="application/atom+xml">
 	
-	<link rel="canonical" href="http://jasper07.secondphase.com.au/blog/archives/">
+	<link rel="canonical" href="http://jasper07.secondphase.com.au/blog/2015/03/10/promise-polyfill/">
 	<link href="/favicon.png" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -93,101 +93,78 @@
 				
 			
 			<div class="mid-col-container">
-				<div id="content" class="inner"><div itemscope itemtype="http://schema.org/Blog">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">Promise Polyfill</h1>
+	<div class="entry-content" itemprop="articleBody"><p>This is a quick blog to remind myself how to support ES6 Promise&rsquo;s in older versions of SAPUI5. I was developing a UI5 app for a customer with Chrome, Chrome already supports natively some of the ECMA Script 6 features like Promises and I it was only when i ran my Opa Tests against Internet Explorer and PhantomJS I found out that I had a couple of backwards compatibility issues which required me to add polyfills.</p>
 
-	
+<p><strong>What is a Promise?</strong></p>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">A promise represents the result of an asynchronous operation</a>. In JavaScript its a nice clean way of avoiding nested callbacks.</p>
+
+<p>For example a promise could represent a list being loaded and onload you want to trigger some functionality say update the list title with the count of entries</p>
+
+<pre class="language-javascript"><code>oWhenListLoadingIsDone = new Promise(function(fnResolve, fnReject) {
+    // trigger resolve callback when list finished loading
+    oMasterList.attachEventOnce("updateFinished", function(){ fnResolve()
+    ..
+}
+</code></pre>
 
 
-	
-	
-	<section class="archives"><h1 class="year">2015</h1>
 
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2015-03-10T18:03:00+11:00" itemprop="datePublished">Mar 10</time></span>
-		<br>
-		<span class="tags">
 
-</span>
-	    
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/03/10/promise-polyfill/">Promise Polyfill</a></h1>
+<pre class="language-javascript">
+oWhenListLoadingIsDone.then(setListTitle, errorCB)
+</code></pre>
+
+
+<p><strong>What is a Polyfill?</strong></p>
+
+<p><a href="https://remysharp.com/2010/10/08/what-is-a-polyfill">A polyfill, is a piece of code that provides the technology that youexpect the browser to provide natively</a>.</p>
+
+<p>SAPUI5 is built on jQuery and jQuery has thier own version of Promise, however thier API breaks the native Promise in a couple of ways.</p>
+
+<p>In my case to get Internet Explorer to support the <code>new Promise(function(fnResolve, fnReject)</code> syntax I had been using was quite simple.</p>
+
+<pre class="language-javascript"><code>if (!window.Promise) {
+    window.Promise = function(callBack) {
+        var promise = jQuery.Deferred();
+
+        callBack(promise.resolve, promise.reject);
+
+        return promise.promise();
+    };
+}
+</code></pre>
+
+
+<p>The current version of UI5 has an ECMA Script 6 Polyfill <a href="https://github.com/SAP/openui5/blob/master/src/sap.ui.core/src/jquery.sap.promise.js"><code>jQuery.sap.promise</code></a> this version is a lot more complete than the one i mention above.</p>
+</div>
+
 </article>
 
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
 	
-
-
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2015-03-05T00:00:00+11:00" itemprop="datePublished">Mar  5</time></span>
-		<br>
-		<span class="tags">
-
-</span>
-	    
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/03/05/shorten-fiori-urls/">Shorten Fiori Urls</a></h1>
-</article>
-
 	
-
-
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2015-02-19T18:03:00+11:00" itemprop="datePublished">Feb 19</time></span>
-		<br>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/china/'>china</a>, <a class='category' href='/blog/categories/mobile/'>mobile</a>, <a class='category' href='/blog/categories/technology/'>technology</a>
-
-
-</span>
-	    
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/02/19/mobile-first-in-china/">Mobile first in China</a></h1>
-</article>
-
+	<a class="addthis_button_tweet"></a>
 	
-
-
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2015-01-10T22:36:00+11:00" itemprop="datePublished">Jan 10</time></span>
-		<br>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/openui5/'>openui5</a>, <a class='category' href='/blog/categories/sapui5/'>sapui5</a>
-
-
-</span>
-	    
-	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/01/10/add-your-own-requests-to-sapui5-mockserver/">Add your own requests to SAPUI5 MockServer</a></h1>
-</article>
-
 	
-
-
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-	<div class="meta">
-		<span class="date"><time datetime="2015-01-04T22:48:00+11:00" itemprop="datePublished">Jan  4</time></span>
-		<br>
-		<span class="tags">
-
-
-	<a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/openui5/'>openui5</a>, <a class='category' href='/blog/categories/sapui5/'>sapui5</a>
-
-
-</span>
-	    
+	<a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+	
+	<a class="addthis_counter addthis_pill_style"></a>
 	</div>
-	<h1 class="title" itemprop="name"><a href="/blog/2015/01/04/beyond-sap-fioris-1-1-3/">Beyond SAP Fiori&#8217;s 1:1:3</a></h1>
-</article>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
 
-  </section>
-</div></div>
+
+
+<section id="comment">
+    <h1 class="title">Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
 			</div>
 			<footer id="footer" class="inner">Copyright &copy; 2015
 
@@ -205,7 +182,10 @@
       var disqus_shortname = 'jasper07';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jasper07.secondphase.com.au/blog/2015/03/10/promise-polyfill/';
+        var disqus_url = 'http://jasper07.secondphase.com.au/blog/2015/03/10/promise-polyfill/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
