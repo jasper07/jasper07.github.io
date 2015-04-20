@@ -8,7 +8,7 @@ keywords: sapui5, jQuery, promise
 description: A simple jQuery polyfill for jQuery
 ---
 
-This is a quick blog to remind myself how to support ES6 Promise's in older versions of SAPUI5. I was developing a UI5 app for a customer with Chrome, Chrome already supports natively some of the ECMA Script 6 features like Promises and I it was only when i ran my Opa Tests against Internet Explorer and PhantomJS I found out that I had a couple of backwards compatibility issues which required me to add polyfills.
+This is a quick blog to remind myself how to support ES6 Promise's in older versions of SAPUI5. I was developing a UI5 app for a customer with Chrome, Chrome already supports natively some of the ECMA Script 6 features like Promises and it was only when i ran the applcations Opa Tests against Internet Explorer and PhantomJS I found out that I had a couple of backwards compatibility issues which required me to add polyfills.
 
 **What is a Promise?**
 
