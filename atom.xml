@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T23:16:22+10:00</updated>
+  <updated>2016-04-09T23:17:51+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Merging a common i18n text bundle]]></title>
+    <title type="html"><![CDATA[Merging two i18n text bundles]]></title>
     <link href="http://jasper07.secondphase.com.au/blog/2016/04/09/merge-translatable-texts/"/>
     <updated>2016-04-09T20:18:00+10:00</updated>
     <id>http://jasper07.secondphase.com.au/blog/2016/04/09/merge-translatable-texts</id>
