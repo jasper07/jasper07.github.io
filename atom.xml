@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T22:44:37+10:00</updated>
+  <updated>2016-04-09T22:58:11+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -18,23 +18,21 @@
     <link href="http://jasper07.secondphase.com.au/blog/2016/04/09/reuse-and-translatable-texts/"/>
     <updated>2016-04-09T20:18:00+10:00</updated>
     <id>http://jasper07.secondphase.com.au/blog/2016/04/09/reuse-and-translatable-texts</id>
-    <content type="html"><![CDATA[<p>Often when working on a suite of applications you will want to encapsulate common code into reusable libraries and or components. A requirement that has popped up a few times is how do you merge a reusable master text file with the translatable text file the applicaiton uses.</p>
+    <content type="html"><![CDATA[<p>Often when working on a suite of applications you will want to encapsulate common code into reusable libraries and or components. Inside of the reusable module is a master text file, a requirement that has popped up a few times is how to merge the master text file with the translatable text file the applicaiton uses.</p>
 
 <p>Below i show how its possible to merge an application i18n models texts with the texts from a reusable components i18n model.</p>
 
-<p>Why would you want to do it? think the scenario where you are creating a suite of Sales and Distribution application, there is a common buiness vocabulary that you may want to share between applications.</p>
+<p>Why would you want to do it? you are creating a suite of Sales and Distribution application, there is a common buiness vocabulary that you may want to share between applications.</p>
 
-<p>The pic below shows a reusable component, later it will be loaded as a dependency in an application, in this simple example i am creating one text property which will be merged, ensure that the i18n model is created when the Component is instantiated.</p>
+<p>The pic below shows a reusable component, later it will be loaded as a dependency in an application, in this simple example i am creating one text property which will be merged. In this scenario the i18n model is created when the Component is instantiated.</p>
 
 <p><img src="http://jasper07.secondphase.com.au/images/blog/reusable_component.PNG" /></p>
 
-<p>Next for example we create an application with a single text also</p>
+<p>Next for we create an application which also has a single text property</p>
 
 <p><img src="http://jasper07.secondphase.com.au/images/blog/application_component.PNG" /></p>
 
-<p>And declare a simple view to show texts from the two sources</p>
-
-<p>To consume the common component, inside the manifest under &ldquo;dependencies&rdquo; declare your component, declaring the &ldquo;resourceRoots&rdquo; will tell the application where to locate the module. In the example below the Component is saved as a BSP in the ABAP UI5 Repository.</p>
+<p>To demonstrate successful merge of texts we declare a simple view which shows the two text properties.</p>
 
 <pre class="language-html"><code>&lt;mvc:View controllerName=&quot;test.reuse.myApp.controller.Main&quot; 
 xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
@@ -44,7 +42,7 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
 </code></pre>
 
 
-
+<p>To consume the common component from an application, inside the manifest under &ldquo;dependencies&rdquo; declare the reusable component, declaring the &ldquo;resourceRoots&rdquo; will tell the application where to locate the module. In the example below the Component is saved as a BSP in the ABAP UI5 Repository.</p>
 
 <pre class="language-javascript"><code>"sap.ui5": {
     "rootView": "test.reuse.myApp.view.Main",
@@ -68,7 +66,7 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
 </code></pre>
 
 
-<p>If you are like me and developing teams that where members use both thier own and the WebIde you will want to overide the resource root and point to both local server resources and the cloud based workspace where you have the component, this is similar to how you would reference the source application from an extension project. If you set the &ldquo;final&rdquo; flag to true then any subsequent path registration will be ignored.</p>
+<p>If you are like me and developing in teams where members use both WebIde and thier own local development environment, you will want to overide the destination defined in the resource root and point to both local server resources and the cloud based workspace where the common component is located, for WebIDE this is similar to how you would reference the source application from an extension project. When declaring the module path if you set the &ldquo;final&rdquo; flag to true then any subsequent path registration will be ignored.</p>
 
 <pre class="language-javascript"><code>var sUrl;
 if (window.location.host.match(/^(localhost|127.0.0.1|0.0.0.0)/)) {
@@ -84,7 +82,7 @@ jQuery.sap.registerModulePath("test.reuse.common", {
 </code></pre>
 
 
-<p>Don&rsquo;t forget to add the &ldquo;neo-app.json&rdquo; entries for the backend and orion paths</p>
+<p>Don&rsquo;t forget to add the &ldquo;neo-app.json&rdquo; entries for the backend and orion paths for WebIDE.</p>
 
 <pre class="language-javascript"><code>{
     "path": "/orion/",
@@ -106,7 +104,7 @@ jQuery.sap.registerModulePath("test.reuse.common", {
 </code></pre>
 
 
-<p>So we have create a reuse component, add it as a dependency to our application, added options for finding the Component when run locally and from a server, all that is left is to get an instance of the reuse component and merge the i18n models, we do that in the applications component.</p>
+<p>So we have created a reusab;e component, added it as a dependency to our application, coded options for finding the Component when run locally and from a server, all that is left is to get an instance of the reuse component and merge the i18n models, we do that in the applications component.</p>
 
 <pre class="language-javascript"><code>sap.ui.define(['sap/ui/core/UIComponent'],
     function(UIComponent) {
