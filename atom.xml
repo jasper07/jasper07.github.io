@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T23:27:46+10:00</updated>
+  <updated>2016-04-09T23:34:32+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -84,8 +84,8 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
 <pre class="language-javascript"><code>var sUrl;
 if (window.location.host.match(/^(localhost|127.0.0.1|0.0.0.0)/)) {
     sUrl = "../common";
-} else if (window.location.host.match(/^(<USERID>)/)) {
-    sUrl = "/../orion/file/<TENANT>$<USERID>-OrionContent/common/";
+} else if (window.location.host.match(/^(&lt;USERID&gt;)/)) {
+    sUrl = "/../orion/file/&lt;TENANT&gt;$&lt;USERID&gt;-OrionContent/common/";
 }
 
 jQuery.sap.registerModulePath("test.reuse.common", {
