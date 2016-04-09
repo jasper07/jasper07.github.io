@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T22:58:11+10:00</updated>
+  <updated>2016-04-09T23:00:31+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -22,7 +22,7 @@
 
 <p>Below i show how its possible to merge an application i18n models texts with the texts from a reusable components i18n model.</p>
 
-<p>Why would you want to do it? you are creating a suite of Sales and Distribution application, there is a common buiness vocabulary that you may want to share between applications.</p>
+<p>Why would you want to do it? you are creating a suite of Sales and Distribution applications for end users, there is a common buiness vocabulary that you may want to share between applications.</p>
 
 <p>The pic below shows a reusable component, later it will be loaded as a dependency in an application, in this simple example i am creating one text property which will be merged. In this scenario the i18n model is created when the Component is instantiated.</p>
 
