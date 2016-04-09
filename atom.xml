@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T23:20:43+10:00</updated>
+  <updated>2016-04-09T23:27:46+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -117,7 +117,7 @@ jQuery.sap.registerModulePath("test.reuse.common", {
 </code></pre>
 
 
-<p>So we have created a reusab;e component, added it as a dependency to our application, coded options for finding the Component when run locally and from a server, all that is left is to get an instance of the reuse component and merge the i18n models, we do that in the applications component.</p>
+<p>So we have created a reusable component with a common translatable text file, added it as a dependency to our application, coded options for finding the Component when running locally and from a server, all that is left is to get an instance of the reuse component and merge the i18n models, we do that in the applications component.</p>
 
 <pre class="language-javascript"><code>sap.ui.define(['sap/ui/core/UIComponent'],
     function(UIComponent) {
