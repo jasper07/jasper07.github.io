@@ -137,10 +137,10 @@
 
 <p>To consume the common component, inside the manifest under &ldquo;dependencies&rdquo; declare your component, declaring the &ldquo;resourceRoots&rdquo; will tell the application where to locate the module. In the example below the Component is saved as a BSP in the ABAP UI5 Repository.</p>
 
-<pre class="language-html"><code><mvc:View controllerName="test.reuse.myApp.controller.Main" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <Button text="{i18n>myAppText}"/>
-    <Button text="{i18n>commonText}"/>
-</mvc:View>
+<pre class="language-html"><code>&lt;mvc:View controllerName=&quot;test.reuse.myApp.controller.Main&quot; xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
+    &lt;Button text=&quot;{i18n&gt;myAppText}&quot;/&gt;
+    &lt;Button text=&quot;{i18n&gt;commonText}&quot;/&gt;
+&lt;/mvc:View&gt;
 </code></pre>
 
 
