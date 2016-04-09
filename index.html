@@ -125,11 +125,22 @@
 
 <p>Why would you want to do it? you are creating a suite of Sales and Distribution applications for end users, there is a common buiness vocabulary that you may want to share between applications.</p>
 
-<p>The pic below shows a reusable component, later it will be loaded as a dependency in an application, in this simple example i am creating one text property which will be merged. In this scenario the i18n model is created when the Component is instantiated.</p>
+<p>The pic below shows a reusable component, later it will be loaded as a dependency in an application, in this simple example i am creating one text property which will be merged.</p>
 
 <p><img src="/images/blog/reusable_component.PNG" /></p>
 
-<p>Next for we create an application which also has a single text property</p>
+<p>In the manifest we ensure the i18n model is loaded when the component is instantiated.</p>
+
+<pre class="language-javascript"><code>"models": {
+    "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+    }
+},
+</code></pre>
+
+
+<p>Next create an application which also has a single text property</p>
 
 <p><img src="/images/blog/application_component.PNG" /></p>
 
@@ -167,7 +178,9 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
 </code></pre>
 
 
-<p>If you are like me and developing in teams where members use both WebIde and thier own local development environment, you will want to overide the destination defined in the resource root and point to both local server resources and the cloud based workspace where the common component is located, for WebIDE this is similar to how you would reference the source application from an extension project. When declaring the module path if you set the &ldquo;final&rdquo; flag to true then any subsequent path registration will be ignored.</p>
+<p>If you are like me and developing in teams where members use both WebIde and thier own local development environment, you will want to overide the destination defined in the resource root and point to both local server resources and the cloud based workspace where the common component is located. In WebIDE this is similar to how you would reference the source application from an extension project.</p>
+
+<p>When registeing a module path if you set the &ldquo;final&rdquo; flag to true then any subsequent path registration will be ignored.</p>
 
 <pre class="language-javascript"><code>var sUrl;
 if (window.location.host.match(/^(localhost|127.0.0.1|0.0.0.0)/)) {
