@@ -4,7 +4,7 @@
   <title><![CDATA[]]></title>
   <link href="http://jasper07.secondphase.com.au/atom.xml" rel="self"/>
   <link href="http://jasper07.secondphase.com.au/"/>
-  <updated>2016-04-09T23:00:31+10:00</updated>
+  <updated>2016-04-09T23:05:57+10:00</updated>
   <id>http://jasper07.secondphase.com.au/</id>
   <author>
     <name><![CDATA[John Patterson]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Reuse and translatable texts]]></title>
-    <link href="http://jasper07.secondphase.com.au/blog/2016/04/09/reuse-and-translatable-texts/"/>
+    <title type="html"><![CDATA[Merging a common i18n text bundle]]></title>
+    <link href="http://jasper07.secondphase.com.au/blog/2016/04/09/merge-translatable-texts/"/>
     <updated>2016-04-09T20:18:00+10:00</updated>
-    <id>http://jasper07.secondphase.com.au/blog/2016/04/09/reuse-and-translatable-texts</id>
+    <id>http://jasper07.secondphase.com.au/blog/2016/04/09/merge-translatable-texts</id>
     <content type="html"><![CDATA[<p>Often when working on a suite of applications you will want to encapsulate common code into reusable libraries and or components. Inside of the reusable module is a master text file, a requirement that has popped up a few times is how to merge the master text file with the translatable text file the applicaiton uses.</p>
 
 <p>Below i show how its possible to merge an application i18n models texts with the texts from a reusable components i18n model.</p>
