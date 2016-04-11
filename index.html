@@ -154,13 +154,10 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
 </code></pre>
 
 
-<p>To consume the common component from an application, inside the manifest under &ldquo;dependencies&rdquo; declare the reusable component, declaring the &ldquo;resourceRoots&rdquo; will tell the application where to locate the module. In the example below the Component is saved as a BSP in the ABAP UI5 Repository.</p>
+<p>To consume the common component from an application, inside the manifest under &ldquo;dependencies&rdquo; declare the reusable component.</p>
 
 <pre class="language-javascript"><code>"sap.ui5": {
     "rootView": "test.reuse.myApp.view.Main",
-    "resourceRoots": {
-        "test.reuse.common": "../sap/bc/ui5_ui5/sap/zcommon"
-    },
     "dependencies": {
         "minUI5Version": "1.32.1",
         "components": {
@@ -177,6 +174,18 @@ xmlns=&quot;sap.m&quot; xmlns:mvc=&quot;sap.ui.core.mvc&quot;&gt;
     },
 </code></pre>
 
+
+<p>In the example below the Component is saved as a BSP in the ABAP UI5 Repository, so at the top of the Component file we need to the following</p>
+
+<pre class="language-javascript"><code>var sUrl;
+jQuery.sap.registerModulePath("test.reuse.common", {
+    url: "/sap/bc/ui5_ui5/sap/zcommon"
+});
+
+</code></pre>
+
+
+<p>Originally had this logic in the manifest &ldquo;resoureRoots&rdquo; but later found that absolute paths cannot be entered</p>
 
 <p>If you are like me and developing in teams where members use both WebIde and thier own local development environment, you will want to overide the destination defined in the resource root and point to both local server resources and the cloud based workspace where the common component is located. In WebIDE this is similar to how you would reference the source application from an extension project.</p>
 
@@ -220,7 +229,11 @@ jQuery.sap.registerModulePath("test.reuse.common", {
 
 <p>So we have created a reusable component with a common translatable text file, added it as a dependency to our application, coded options for finding the Component when running locally and from a server, all that is left is to get an instance of the reuse component and merge the i18n models, we do that in the applications component.</p>
 
-<pre class="language-javascript"><code>sap.ui.define(['sap/ui/core/UIComponent'],
+<pre class="language-javascript"><code>jQuery.sap.registerModulePath("test.reuse.common", {
+    url: "/sap/bc/ui5_ui5/sap/zcommon"
+});
+
+sap.ui.define(['sap/ui/core/UIComponent'],
     function(UIComponent) {
         "use strict";
 
