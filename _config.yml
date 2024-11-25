@@ -1,2 +1,2 @@
-include:
-  - ".well-known"
+exclude: [ "CNAME", "Gemfile*", "LICENSE.txt", "README.md", "tmp", "*.sh" ]
+include: [".well-known"]
